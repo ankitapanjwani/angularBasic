@@ -1,0 +1,18 @@
+<!-- <p>parent works!</p>
+
+<p>data inside parent: {{parentData}}</p>
+<p>Data received from child: {{childData}}</p>
+<p>Accessing Data from Child template reference variable: {{cc.childData}}</p>
+<p>Accessing child data using @viewchild : {{temp}}</p>
+
+<hr>
+<app-child [parentData]="parentData" 
+[anotherData]="anotherData"
+(sendData)="receiveDataFromchild($event)"
+#cc ></app-child> -->
+<h1>Parent Component</h1>
+Username: <input type="text" placeholder="Enter UserName" [(ngModel)]="username"/>
+<p>Enteres Username is: {{username}}</p>
+<p>parent works!</p>
+<hr>
+<app-child [username]="username">We are passing external data {{username}}</app-child>

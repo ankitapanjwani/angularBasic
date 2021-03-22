@@ -1,0 +1,61 @@
+<p>product works!</p>
+<!-- <ul> -->
+    <!-- interpolation -->
+    <!-- <li>{{skills[0]}}</li>  
+    <li>{{skills[1]}}</li>
+    <li>{{skills[2]}}</li>
+    <li>{{skills[3]}}</li>
+    <li>{{skills[4]}}</li> -->
+
+        <!-- <li *ngFor="let s of skills">{{s}}</li> -->
+<!-- </ul> -->
+
+<button (click)="showHideSkills()">ShowHideSkills</button>
+<ul *ngIf="isVisible; else elseblk">
+     <li *ngFor="let s of skills">{{s}}</li>
+</ul>
+
+
+
+<!-- interpolation way -->
+<p>{{title}}</p>  
+
+ <!-- data binding -->
+ <p [innerHTML]="title"></p>
+
+ <!-- through interpolation -->
+ <button disabled="{{isDisabled}}">Click me</button>
+
+<!-- through data binding -->
+ <button [disabled]="isDisabled">Click me</button>
+ <!-- Use interpolation wherever possiible  -->
+
+
+
+<p (click)="fun1()">Click on para</p>
+<hr>
+<input type="text" [(ngModel)]="address">
+<p>address: {{address}}</p>
+
+
+<!-- Pipe Operations  -->
+<p>date: {{dob | date: 'medium'}}</p>
+<p>date: {{dob | date: 'short'}}</p>
+<p>date: {{dob | date: 'dd--MMM--yyyy'}}</p>
+
+<!-- <p>Salary: {{1234 | currency:'INR'}}</p> -->
+<p>Salary: {{174 | inrusd | currency:'USD'}}</p>
+<p>The hero's birthday is {{ birthday | date }}</p>
+
+
+<ng-template #elseblk>
+    <h1>There are no list to show</h1>
+</ng-template>
+
+
+
+
+<p [ngClass]="'first second'">This is directive Element</p>
+
+
+<p [ngStyle]="{ 'backgroundColor': 'cyan', 'color': 'red', 'fontSize': '20px'}">Inline Styling</p>
